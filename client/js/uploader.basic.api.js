@@ -795,6 +795,10 @@
         },
 
         _formatSize: function(bytes) {
+            if (bytes === 0) {
+                return bytes + this._options.text.sizeSymbols[0];
+            }
+
             var i = -1;
             do {
                 bytes = bytes / 1000;
