@@ -1795,7 +1795,7 @@
                 return validityChecker.failure();
             }
 
-            if (size === 0) {
+            if (!this._options.validation.allowEmpty && size === 0) {
                 this._itemError("emptyError", name, file);
                 return validityChecker.failure();
             }
